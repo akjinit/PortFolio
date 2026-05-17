@@ -107,9 +107,6 @@ export const AchievementsSection = () => {
         <div className="mt-12 flex justify-center animate-fade-in-delay-2 w-full">
           <div className="bg-card p-6 rounded-xl shadow-md border border-border/50 overflow-hidden w-full max-w-3xl highlight-card">
             <h3 className="text-xl font-bold mb-4 text-center">Live LeetCode Stats</h3>
-            <p className="text-muted-foreground text-center mb-6 text-sm">
-              Note: LeetCode prevents loading their full website inside an iframe for security reasons (Clickjacking protection). Here are my live, auto-updating stats instead!
-            </p>
             <div className="flex justify-center overflow-x-auto w-full">
               <a href="https://leetcode.com/akjinit/" target="_blank" rel="noopener noreferrer">
                 <img 

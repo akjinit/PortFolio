@@ -33,7 +33,13 @@ const projects = [
     id: 1,
     title: "AI Finance Platform",
     description:
-      "A modern AI-powered finance application with real-time expense tracking, predictive forecasting, and a highly responsive dashboard for intelligent financial insights.",
+      "Production-ready personal finance management platform with real-time transaction tracking and intelligent financial insights.",
+    features: [
+      "Architected RESTful backend services with atomic balance updates and data consistency.",
+      "Implemented event-driven background workflows using Inngest for recurring transactions and budget alerts.",
+      "Integrated AI-powered analysis using Google Gemini API for receipt scanning and expense categorization.",
+      "Secured application with rate limiting and bot protection using Arcjet."
+    ],
     images: [
       "/projects/ai-finance-1.png",
       "/projects/ai-finance-2.png",
@@ -53,7 +59,13 @@ const projects = [
     id: 2,
     title: "Real-Time Ride Booking Platform",
     description:
-      "Production-grade ride booking app featuring live driver discovery using geospatial queries, OTP-based secure verification, real-time trip tracking, and a seamless map-based UI.",
+      "Full-stack ride sharing platform with real-time driver discovery, trip orchestration, and interactive map visualization.",
+    features: [
+      "Designed a server-authoritative ride lifecycle state machine with atomic database updates.",
+      "Implemented low-latency bidirectional communication using Socket.IO for live trip tracking.",
+      "Integrated MongoDB geospatial indexing (2dsphere) and OSRM routing for ETA calculation.",
+      "Developed an AI-based destination recommendation module using the Google Gemini API."
+    ],
     images: ["/projects/project1.png", "/projects/project1-2.png"],
     tags: [
       { name: "React", icon: FaReact, color: "text-[#61DAFB]" },
@@ -143,9 +155,20 @@ const ProjectCard = ({ project }) => {
         </div>
 
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-muted-foreground text-sm mb-4 flex-grow">
+        <p className="text-muted-foreground text-sm mb-3">
           {project.description}
         </p>
+        
+        {project.features ? (
+          <ul className="list-disc list-outside pl-4 text-muted-foreground text-xs space-y-1.5 mb-4 flex-grow">
+            {project.features.map((feat, idx) => (
+              <li key={idx} className="leading-relaxed">{feat}</li>
+            ))}
+          </ul>
+        ) : (
+          <div className="flex-grow"></div>
+        )}
+
         <div className="flex justify-between items-center mt-auto pt-4 border-t border-border/30">
           <div className="flex space-x-3 w-full justify-end">
             {project.demoUrl !== "#" && (
