@@ -33,13 +33,7 @@ const projects = [
     id: 1,
     title: "AI Finance Platform",
     description:
-      "Production-ready personal finance management platform with real-time transaction tracking and intelligent financial insights.",
-    features: [
-      "Architected RESTful backend services with atomic balance updates and data consistency.",
-      "Implemented event-driven background workflows using Inngest for recurring transactions and budget alerts.",
-      "Integrated AI-powered analysis using Google Gemini API for receipt scanning and expense categorization.",
-      "Secured application with rate limiting and bot protection using Arcjet."
-    ],
+      "A modern AI-powered finance application with real-time expense tracking, predictive forecasting, and a highly responsive dashboard for intelligent financial insights.",
     images: [
       "/projects/ai-finance-1.png",
       "/projects/ai-finance-2.png",
@@ -59,13 +53,7 @@ const projects = [
     id: 2,
     title: "Real-Time Ride Booking Platform",
     description:
-      "Full-stack ride sharing platform with real-time driver discovery, trip orchestration, and interactive map visualization.",
-    features: [
-      "Designed a server-authoritative ride lifecycle state machine with atomic database updates.",
-      "Implemented low-latency bidirectional communication using Socket.IO for live trip tracking.",
-      "Integrated MongoDB geospatial indexing (2dsphere) and OSRM routing for ETA calculation.",
-      "Developed an AI-based destination recommendation module using the Google Gemini API."
-    ],
+      "Production-grade ride booking app featuring live driver discovery using geospatial queries, OTP-based secure verification, real-time trip tracking, and a seamless map-based UI.",
     images: ["/projects/project1.png", "/projects/project1-2.png"],
     tags: [
       { name: "React", icon: FaReact, color: "text-[#61DAFB]" },
@@ -124,14 +112,14 @@ const ProjectCard = ({ project }) => {
 
   return (
     <div className="group bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-md card-hover flex flex-col h-full border border-border/50">
-      <div className="h-52 overflow-hidden relative bg-secondary/20">
+      <div className="h-72 overflow-hidden relative bg-secondary/20 border-b border-border/30">
         {project.images && project.images.map((img, idx) => (
           <img
             key={idx}
             src={img}
             alt={`${project.title} screenshot \${idx + 1}`}
             className={cn(
-              "absolute top-0 left-0 w-full h-full object-cover transition-all duration-1000",
+              "absolute top-0 left-0 w-full h-full object-cover object-top transition-all duration-1000",
               idx === currentImageIndex ? "opacity-100 group-hover:scale-105" : "opacity-0"
             )}
           />
@@ -155,19 +143,9 @@ const ProjectCard = ({ project }) => {
         </div>
 
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-muted-foreground text-sm mb-3">
+        <p className="text-muted-foreground text-sm mb-4 flex-grow">
           {project.description}
         </p>
-        
-        {project.features ? (
-          <ul className="list-disc list-outside pl-4 text-muted-foreground text-xs space-y-1.5 mb-4 flex-grow">
-            {project.features.map((feat, idx) => (
-              <li key={idx} className="leading-relaxed">{feat}</li>
-            ))}
-          </ul>
-        ) : (
-          <div className="flex-grow"></div>
-        )}
 
         <div className="flex justify-between items-center mt-auto pt-4 border-t border-border/30">
           <div className="flex space-x-3 w-full justify-end">
