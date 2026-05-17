@@ -11,6 +11,20 @@ import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
+const LeetcodeIcon = ({ className, size = 24 }) => (
+  <svg
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    className={className}
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.039-1.901l-2.609-2.636a5.055 5.055 0 0 0-2.445-1.337l2.467-2.503c.513-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.469 2.336-1.469 3.897 0 1.56.488 2.83 1.469 3.811l10.1 10.101c.515.515 1.367.497 1.902-.038.535-.536.55-1.387.037-1.901l-2.609-2.636a5.055 5.055 0 0 0 2.445-1.337l-2.467 2.503z"/>
+    <path d="M20.725 10.518H11.233c-.752 0-1.36.608-1.36 1.36s.608 1.36 1.36 1.36h9.492c.752 0 1.36-.608 1.36-1.36s-.608-1.36-1.36-1.36z"/>
+  </svg>
+);
+
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,8 +43,8 @@ export const ContactSection = () => {
     }, 1500);
   };
   return (
-    <section id="contact" className="py-24 px-4 relative bg-secondary/30">
-      <div className="container mx-auto max-w-5xl">
+    <section id="contact" className="py-24 px-4 relative bg-secondary/50 border-t border-border/50">
+      <div className="container mx-auto max-w-7xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
           Get In <span className="text-primary"> Touch</span>
         </h2>
@@ -109,7 +123,7 @@ export const ContactSection = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Code2 />
+                  <LeetcodeIcon size={24} className="hover:text-primary transition-colors" />
                 </a>
                 <a
                   href="https://www.geeksforgeeks.org/profile/akshat578"

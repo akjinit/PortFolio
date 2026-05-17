@@ -2,9 +2,9 @@ import { Briefcase, Code, User } from "lucide-react";
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-24 px-4 relative">
+    <section id="about" className="py-24 px-4 relative bg-background border-t border-border/10">
       {" "}
-      <div className="container mx-auto max-w-5xl">
+      <div className="container mx-auto max-w-7xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           About <span className="text-primary"> Me</span>
         </h2>
@@ -32,7 +32,7 @@ export const AboutSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-              <a href="/resume.pdf" target="_blank" className="cosmic-button">
+              <a href="/Akshat_Kumar_Jha_Resume.pdf" target="_blank" className="cosmic-button">
                 Download CV
               </a>
 
